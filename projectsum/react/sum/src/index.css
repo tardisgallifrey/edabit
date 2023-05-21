@@ -1,0 +1,24 @@
+body {
+  margin: 200px;
+  font-family: 'Pathway Extreme', Tahoma, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: ivory;
+}
+
+input {
+  position: relative;
+  border-radius: 2em;
+  background-color: ivory;
+  margin: 10px;
+  padding: 5 px;
+}
+
+button {
+  position: relative;
+  border-radius: 2em;
+  margin: 10px;
+  padding: 5px;
+}
+
+

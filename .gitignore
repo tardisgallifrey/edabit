@@ -1,0 +1,10 @@
+.vscode
+**/a.out
+**/bin
+**/debug
+**/obj
+**/build
+**/node_modules
+
+
+

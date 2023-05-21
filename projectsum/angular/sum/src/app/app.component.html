@@ -1,0 +1,15 @@
+<!-- double braces allow display of javascript vars -->
+<h2>{{ title }}</h2>
+<!-- ngModel works like v-model in Vue -->
+<!-- because typescript uses classes, this.num1 is required -->
+<input type="text"
+        [(ngModel)]="this.num1"
+        placeholder="Enter a number" />
+<input type="text" 
+        [(ngModel)]="this.num2"
+        placeholder="Enter a number" />
+<!-- %ngIf works like v-if in Vue -->
+<!-- num1 & num2 are checked to be greater than zero -->
+<!-- as conditions for viewing answer -->
+<p *ngIf="this.num1 > 0 && this.num2 > 0">The answer is: {{ sum(+this.num1, +this.num2) }}</p>
+

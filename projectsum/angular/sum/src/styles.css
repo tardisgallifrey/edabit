@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Standard styling to keep page as whole page */
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+body {
+    background-color: ivory;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 100px;
+    
+
+}
+

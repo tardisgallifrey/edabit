@@ -1,0 +1,10 @@
+html, body {
+    background-color: ivory;
+    margin: 100px;
+
+}
+
+input[type="number"] {
+    border-radius: 1em;
+    padding-left: 5px;
+}
