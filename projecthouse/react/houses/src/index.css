@@ -1,0 +1,20 @@
+body {
+  margin: 75px;
+  background-color: ivory;
+  
+}
+
+input {
+  border-radius: 1em;
+  margin: 5px;
+}
+
+label {
+  margin: 5px;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
