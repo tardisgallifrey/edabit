@@ -5,6 +5,7 @@
 **/obj
 **/build
 **/node_modules
+**/target
 
 
 
