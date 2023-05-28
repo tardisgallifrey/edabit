@@ -1,0 +1,11 @@
+<div>
+  <h1>An Angular bitwise challenge</h1>
+  <p>Enter or choose two numbers in the boxes:</p>
+  <input [(ngModel)]="a" type="number"/><br/>
+  <input [(ngModel)]="b" type="number"/><br/>
+  <button (click)="getAnswers(a, b)">Run Bitwise Funcs</button>
+  <p *ngIf="toggle" >The result of bitwise AND is: {{resultAND}}</p>
+  <p *ngIf="toggle" >The result of bitwise OR is: {{resultOR}}</p>
+  <p *ngIf="toggle" >The result of bitwise XOR is: {{resultXOR}}</p>
+
+</div>

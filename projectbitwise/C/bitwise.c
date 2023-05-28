@@ -1,60 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if !defined(BITWISE)
-#define BITWISE
+//write three bitwise functions
+//that return the result of bitwise
+//comparisons of integers.
+//C has operators for doing so.
+int bitwiseAND(int a, int b);
+int bitwiseOR(int a, int b);
+int bitwiseXOR(int a, int b);
 
-#include "bitwise.h"
+int main(){
 
-#endif // BITWISE
+    int a, b;
 
-#include "conversions.h"
+    printf("Three bitwise functions, AND, OR, XOR\n\n");
 
-int main()
-{
-    //malloc and pointers rehash:
-    //this: *p points to what is located at &p
-    //this: p is &p (address of p)
-    //malloc *p points to first element stored at &p
-    //p + 1 is next address
+    printf("Enter an integer: ");
+    scanf("%d", &a);
+    printf("\nNow, enter another integer: ");
+    scanf("%d", &b);
 
- 
-    // This pointer will hold the
-    // base address of the block created
-    int* ptr;
-    int n, i;
- 
-    // Get the number of elements for the array
-    printf("Enter a decimal number:");
-    scanf("%d",&n);
-    if(n >= MAX_ELEMENTS){
-        printf("Your requested array size is too large.\n");
-        exit(0);
-    }
- 
-    // Dynamically allocate memory using malloc()
-    //This says:
-    // ptr now points to a block of integers
-    //that is 2kilobytes in size.
-    //contents are unknown
-    ptr = (int*)malloc(MAX_ELEMENTS * sizeof(int));
-    array_init(ptr);
-
-    // Check if the memory has been successfully
-    // allocated by malloc or not
-    if (ptr == NULL) {
-        printf("Memory not allocated.\n");
-        exit(0);
-    }else {
-        //convert to binary
-        intob(n, ptr, MAX_ELEMENTS);
-
-        //print it out
-        print_array(ptr);
-        
-    }
+    printf("\nThe comparison as a bitwiseAND: %d", bitwiseAND(a, b));
+    printf("\nThe comparison as a bitwiseOR: %d", bitwiseOR(a, b));
+    printf("\nThe comparison as a bitwisexOR: %d", bitwiseXOR(a, b));
+    printf("\n");
     
-    free(ptr);
     return 0;
 }
 
+
+int bitwiseAND(int a, int b){
+    //bitwise AND operator
+    return a & b;
+}
+
+int bitwiseOR(int a, int b){
+    //bitwise OR operator
+    return a | b;
+}
+
+int bitwiseXOR(int a, int b){
+    //bitwise XOR operator
+    return a ^ b;
+}
