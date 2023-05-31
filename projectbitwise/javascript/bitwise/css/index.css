@@ -1,0 +1,9 @@
+html, body {
+    background-color: beige;
+    margin-left: 100px;
+}
+
+input, button {
+    border-radius: 1em;
+}
+
