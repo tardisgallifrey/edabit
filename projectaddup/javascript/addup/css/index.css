@@ -1,0 +1,14 @@
+html, body {
+    background-color: beige;
+    margin-left: 100px;
+}
+
+input, button {
+    border-radius: 1em;
+}
+
+/* hashtags for id="" */
+/* . for class=" */
+#number {
+    width: 150px;
+}

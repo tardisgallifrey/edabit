@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="http://localhost:5248">Home</a></li>
+            
+        </ul>
+    </nav>
+    <div>
+        <main role="main" class="content">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        &copy; Me, myself, I - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </footer>
+   
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
