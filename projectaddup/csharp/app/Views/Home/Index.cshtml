@@ -1,7 +1,18 @@
-﻿@{
+﻿@model app.Models.Vars;
+
+@{
     ViewData["Title"] = "Add Up Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]</h1>
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <hr/>
+    <p>Enter a number between 1 and 1000 below:</p>
 </div>
+
+@using (Html.BeginForm("Output", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.number);
+    @Html.ValidationMessageFor(model => model.number);
+    <button type="submit">calculate</button>
+}

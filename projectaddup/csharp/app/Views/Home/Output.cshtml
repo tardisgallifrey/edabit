@@ -1,0 +1,17 @@
+
+@{
+    ViewData["Title"] = "AddUp results";
+    int mynumber = Convert.ToInt32(ViewData["number"]);
+}
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+    <hr/>
+    @if(mynumber > 0)
+    {
+        <p>The sum of the numbers from 1 to @ViewData["start_point"] is: @ViewData["number"].</p>
+    }else{
+        <p>There was an error with the input.</p>
+    }
+    
+</div>

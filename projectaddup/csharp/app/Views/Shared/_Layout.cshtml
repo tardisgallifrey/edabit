@@ -9,7 +9,7 @@
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="http://localhost:5248">Home</a></li>
+            <li class="menu"><a class="menu" href="http://localhost:5248">Home</a></li>
             
         </ul>
     </nav>
@@ -18,11 +18,11 @@
             @RenderBody()
         </main>
     </div>
-    <footer>
-        &copy; Me, myself, I - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-    </footer>
+    <div class="foot">
+        &copy; Me, myself, I - @ViewData["Title"]
+    </div>
    
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
