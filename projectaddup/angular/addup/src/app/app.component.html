@@ -1,0 +1,12 @@
+<div>
+    <h1>Addup challenge for Angular</h1>
+    <hr/>
+    <p>Enter a number between 1 and 1000 below:</p>
+    <input type="number" 
+                [(ngModel)] = "this.value"
+                />
+
+    <!-- It was easier to make two statements work than else's -->
+    <p *ngIf="Calculate(this.value) == -1 && this.value > 1">There was an error.</p>
+    <p *ngIf="this.value > 1 && Calculate(this.value) != -1">The sum of numbers from 1 to {{this.value}} is: {{Calculate(this.value)}}</p> 
+</div>

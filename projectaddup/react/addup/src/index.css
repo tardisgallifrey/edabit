@@ -1,0 +1,7 @@
+html body {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: beige;
+  margin-left: 100px;
+  margin-top: 50px;
+}
