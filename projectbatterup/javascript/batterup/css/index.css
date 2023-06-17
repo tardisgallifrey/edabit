@@ -1,0 +1,16 @@
+html, body {
+    background-color: beige;
+    min-width: 100%;
+    min-height: 100%;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+input, button {
+    border-radius: 1em;
+    margin: 5px;
+}
+
+h4, h5, p {
+    margin: 1px;
+}

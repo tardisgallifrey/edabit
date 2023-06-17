@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="css/index.css"/>
+    </head>
+<body>
+    <!-- This provides a 'root' div to work from -->
+    <div id='root'>
+        <h1>JavaScript Batting Average</h1>
+        <hr/>
+    </div>
+    <div id="enter">
+        <h4>Enter number of hits in game here: </h4>
+        <input id="hits" 
+                type="number"
+                min="0"
+                required/>
+        <h4>Enter number of at bats in game here: </h4>
+        <input id="atbats" 
+                type="number"
+                min="0"
+                required/>
+        <h5>Click here to add:</h5>
+        <button onclick="addGame()" >add game</button>
+    </div>
+    <div id="display"></div>
+    <!-- Quick and easy clear everything-->
+    <button onclick="window.location.reload()">Clear</button>
+
+<script src='scripts/main.js'></script>
+</body>
+</html>
