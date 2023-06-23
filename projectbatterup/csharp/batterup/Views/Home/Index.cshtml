@@ -1,0 +1,21 @@
+﻿@model batterup.Models.Batter
+
+@{
+    ViewData["Title"] = "C# batterup";
+    ViewData["PageTitle"] = "A C# method for the batters average challenge";
+    
+}
+
+<div>
+    <h1>@ViewData["PageTitle"]</h1>
+    <hr/>
+    @using (Html.BeginForm("AddGame", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.name);
+        @Html.ValidationMessageFor(model => model.name);
+        @Html.TextBoxFor(model => model.length);
+        <button type="submit">Add</button>
+    }
+
+  
+</div>
