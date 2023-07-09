@@ -4,13 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/site.css" />
-    
+    <link rel="stylesheet" href="~/css/site.css"/>
 </head>
 <body>
-    <div id="root">
+    <header>
+        
+    </header>
+    <div>
         @RenderBody()
     </div>
-        @await RenderSectionAsync("Scripts", required: false)
+
+    <footer>
+        <div>
+            &copy; 2023 - batterup - <a href="/Home">Go Home</a>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

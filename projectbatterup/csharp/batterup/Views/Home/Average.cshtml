@@ -1,0 +1,13 @@
+@model batterup.Models.ViewModel
+
+@{
+    ViewBag.PageTitle = "Batter's Average";
+}
+
+<div>
+    <h1>@ViewBag.PageTitle</h1>
+    @if(ViewBag.Average != null){
+        <h3>The batter's average across @ViewBag.Series games</h3>
+        <h3>is: @ViewBag.Average</h3>
+    }
+</div>

@@ -1,21 +1,34 @@
-﻿@model batterup.Models.Batter
+﻿@model batterup.Models.ViewModel;
 
 @{
-    ViewData["Title"] = "C# batterup";
-    ViewData["PageTitle"] = "A C# method for the batters average challenge";
-    
+    ViewData["Title"] = "Batter Up";
+    ViewBag.PageTitle = "Batter's Average Calculator";
 }
 
 <div>
-    <h1>@ViewData["PageTitle"]</h1>
-    <hr/>
-    @using (Html.BeginForm("AddGame", "Home", FormMethod.Post))
+    <h1>@ViewBag.PageTitle</h1>
+     @using (Html.BeginForm("AddGame", "Home", FormMethod.Post))
     {
-        @Html.TextBoxFor(model => model.name);
-        @Html.ValidationMessageFor(model => model.name);
-        @Html.TextBoxFor(model => model.length);
+        @Html.Label("Enter number of hits: ")
+     	@Html.TextBoxFor(model => model.hits)
+        @Html.ValidationMessageFor(model => model.hits)<br/>
+        @Html.Label("Enter number of at bats: ")
+        @Html.TextBoxFor(model => model.atbats)
+        @Html.ValidationMessageFor(model => model.atbats)<br/>
+        @Html.Label("Last game (check the box): ")
+        @Html.CheckBoxFor(model => model.complete)<br/>
         <button type="submit">Add</button>
     }
+    @if(ViewBag.Hits != null){
+        <p>Hits: @ViewBag.Hits</p>
+    }
+    @if(ViewBag.AtBats != null){
+        <p>At Bats: @ViewBag.AtBats</p>
+    }
+    @if(ViewBag.Series != null){
+        <p>Series length: @ViewBag.Series</p>
+    }
 
-  
 </div>
+
+

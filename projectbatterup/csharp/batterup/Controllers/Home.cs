@@ -1,53 +1,53 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using batterup.Models;
 
 namespace batterup.Controllers;
 
 public class Home : Controller
 {
-   
-    private readonly ILogger<Home> _logger;
-
-    public Home(ILogger<Home> logger)
-    {
-        _logger = logger;
-    }
-
+    
     public IActionResult Index()
     {
-        var player = new Batter();
+        HttpContext.Session.SetInt32("hits", 0);
+        HttpContext.Session.SetInt32("atbats", 0);
+        HttpContext.Session.SetInt32("NumGames", 0);
 
-        return View(player);
+        return View();
     }
 
-    public IActionResult AddGame(Batter player)
+    [HttpPost]
+    public IActionResult AddGame(ViewModel model)
     {
-        if(ModelState.IsValid){
+        int hits = (int)HttpContext.Session.GetInt32("hits") + model.hits;
+        int atbats = (int)HttpContext.Session.GetInt32("atbats") + model.atbats;
+        int series = (int)HttpContext.Session.GetInt32("NumGames");
+        series++;
+        HttpContext.Session.SetInt32("NumGames", series);
+        HttpContext.Session.SetInt32("hits", hits);
+        HttpContext.Session.SetInt32("atbats", atbats);
+        ViewBag.Hits = HttpContext.Session.GetInt32("hits");
+        ViewBag.AtBats = HttpContext.Session.GetInt32("atbats");
+        ViewBag.Series = HttpContext.Session.GetInt32("NumGames");
 
-            //check to see if the player name is
-            //null or empty (most likely null)
-            //then just restart the Index view
-            if(String.IsNullOrEmpty(player.name)){
-                //If you call a view directly,
-                //View name must be in quotes as string
-                return View("Index", player);
-            }
-
-            //check to see if there are too 
-            //few games, and set a default
-            if(player.length < 3){
-                player.length = 3;
-            }
-
-            //check to see if there are too many games
-            //and set a default
-            if(player.length > 10){
-                player.length = 10;
-            }
+        if(model.complete){
+            return RedirectToAction("Average");
+        }else{
+            return View("Index");
         }
-
-        //call the AddGame view
-        return View(player);
     }
 
+    public IActionResult Average()
+    {
+        int hits = (int)HttpContext.Session.GetInt32("hits");
+        int atbats = (int)HttpContext.Session.GetInt32("atbats");
+        string avg = ((double)hits/(double)atbats).ToString().Replace("0.",".").Substring(0,4);
+        HttpContext.Session.SetString("Average", avg);
+        ViewBag.Average = HttpContext.Session.GetString("Average");
+        ViewBag.Series = HttpContext.Session.GetInt32("NumGames");
+
+        return View();
+    }
+
+  
 }
