@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime;
 using batterup.Models;
 
 namespace batterup.Controllers;
@@ -41,7 +42,10 @@ public class Home : Controller
     {
         int hits = (int)HttpContext.Session.GetInt32("hits");
         int atbats = (int)HttpContext.Session.GetInt32("atbats");
-        string avg = ((double)hits/(double)atbats).ToString().Replace("0.",".").Substring(0,4);
+        string avg = Math.Round(((double)hits/(double)atbats), 3)
+                                        .ToString()
+                                        .Replace("0.",".")
+                                        .Substring(0, 4);
         HttpContext.Session.SetString("Average", avg);
         ViewBag.Average = HttpContext.Session.GetString("Average");
         ViewBag.Series = HttpContext.Session.GetInt32("NumGames");
