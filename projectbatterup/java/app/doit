@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./javacompile
+./jar-it
+java -jar ./app.jar
+
