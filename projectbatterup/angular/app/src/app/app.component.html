@@ -1,0 +1,7 @@
+<div>
+  <h1>{{ title }}</h1>
+  <p>Hits: {{ total_hits }}</p>
+  <input type="number" ng-model="hits"/><br/>
+  <input type="number" ng-model="atbats"/><br/>
+  <button (click)="AddGame(hits, atbats)">Add Game</button>
+</div>
